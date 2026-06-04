@@ -860,152 +860,606 @@
 
 <!-- ============ MUSCLE GROUPS ============ -->
 <section id="muscles">
+<style>
+  .mg-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+  .mg-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+  }
+  .mg-body { padding: 0 1.5rem 1.5rem; }
+  .mg-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0 0 1.25rem;
+    padding-top: 0.25rem;
+  }
+  .mg-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .mg-img-wrap {
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--gray-light);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mg-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mg-img-wrap img.portrait {
+    object-fit: contain;
+    background: #f5f5f2;
+  }
+  .mg-img-caption {
+    font-size: 0.72rem;
+    color: var(--gray);
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+  .mg-img-slot { display: flex; flex-direction: column; }
+  .mg-exercises {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+  .mg-ex-col h5 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray);
+    margin: 0 0 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+  }
+  .mg-ex-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .mg-ex-col ul li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .mg-ex-col ul li:last-child { border-bottom: none; }
+  .mg-ex-col ul li::before {
+    content: '›';
+    color: var(--green-mid);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .mg-tip {
+    background: var(--gray-light);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.82rem;
+    color: var(--gray-dark);
+    margin-top: 1rem;
+  }
+  .mg-tip strong { color: var(--green-dark); }
+</style>
+
   <div class="content-section">
     <h2>Muscle Groups</h2>
-    <p>Understanding which muscles do what helps you build a balanced training program and avoid neglecting certain areas. Here are the major muscle groups and key exercises for each.</p>
+    <p>Understanding which muscles do what helps you build a balanced training program and avoid neglecting any area. Each group below includes anatomy notes, real exercise images, and a full list of movements to try.</p>
 
-    <div class="muscle-grid">
-
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#EAF3DE; color:#27500A;">🫁 Chest (Pectorals)</div>
-        <div class="gif-block"><span>🏋️</span>Bench Press — flat, incline, or decline</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Works the pectoralis major and minor. Responsible for pushing movements.</p>
-          <ul>
-            <li>Bench Press (barbell or dumbbell)</li>
-            <li>Push-Ups</li>
-            <li>Chest Fly (cable or dumbbell)</li>
-            <li>Chest Press Machine</li>
-          </ul>
+    <!-- CHEST -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#EAF3DE; color:#27500A;">🫁 Chest <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#3B6D11;">(Pectoralis Major & Minor)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The pectorals are the large fan-shaped muscles across the front of your chest. They control pushing, pressing, and crossing the arms in front of the body. The upper (clavicular) head is hit more on incline movements; the lower (sternal) head on flat and decline work.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/barbell-bench-press-resized.png" alt="Barbell bench press muscles worked" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏋️</span>'"></div>
+            <div class="mg-img-caption">Barbell Bench Press</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/push-up-resized.png" alt="Push-up muscles worked" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>💪</span>'"></div>
+            <div class="mg-img-caption">Push-Up</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/incline-dumbbell-press-resized.png" alt="Incline dumbbell press muscles" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏋️</span>'"></div>
+            <div class="mg-img-caption">Incline Dumbbell Press</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/cable-crossover-resized.png" alt="Cable fly chest muscles" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🔁</span>'"></div>
+            <div class="mg-img-caption">Cable Fly / Crossover</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/chest-press-machine-resized.png" alt="Chest press machine" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏃</span>'"></div>
+            <div class="mg-img-caption">Chest Press Machine</div>
+          </div>
         </div>
-      </div>
-
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#E1F5EE; color:#085041;">🔙 Back (Latissimus Dorsi / Lats)</div>
-        <div class="gif-block"><span>🏋️</span>Lat Pulldown — essential for beginners</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">The large wing-shaped muscles. Key for posture and all pulling movements.</p>
-          <ul>
-            <li>Lat Pulldown</li>
-            <li>Seated Row</li>
-            <li>Pull-Ups / Assisted Pull-Ups</li>
-            <li>Single-Arm Dumbbell Row</li>
-          </ul>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Compound (multi-muscle)</h5>
+            <ul>
+              <li>Barbell Bench Press (flat)</li>
+              <li>Dumbbell Bench Press</li>
+              <li>Incline Barbell Press</li>
+              <li>Incline Dumbbell Press</li>
+              <li>Decline Bench Press</li>
+              <li>Push-Ups (standard)</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Isolation & Machine</h5>
+            <ul>
+              <li>Cable Fly / Crossover</li>
+              <li>Dumbbell Fly</li>
+              <li>Chest Press Machine</li>
+              <li>Pec Deck Machine</li>
+              <li>Close-Grip Push-Up</li>
+              <li>Landmine Press</li>
+            </ul>
+          </div>
         </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> Start with the chest press machine or push-ups before moving to free-weight bench pressing. Focus on feeling the chest squeeze at the top of each rep — this is the "mind-muscle connection."</div>
       </div>
+    </div>
 
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#FAEEDA; color:#633806;">🦵 Legs (Quadriceps)</div>
-        <div class="gif-block"><span>🦵</span>Squat — king of leg exercises</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Front of the thigh. Primary movers in squatting and knee extension.</p>
-          <ul>
-            <li>Squats (bodyweight or barbell)</li>
-            <li>Leg Press</li>
-            <li>Leg Extension Machine</li>
-            <li>Lunges</li>
-          </ul>
+    <!-- BACK -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#E1F5EE; color:#085041;">🔙 Back <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#0F6E56;">(Latissimus Dorsi, Rhomboids, Traps, Erectors)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The back is a complex group. The latissimus dorsi (lats) are the large wing-shaped muscles that give the V-taper look. The rhomboids and middle traps pull the shoulder blades together. The erector spinae run along the spine and keep you upright. A strong back is critical for posture and injury prevention.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/05/lat-pulldown-resized.png" alt="Lat pulldown muscles worked" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏋️</span>'"></div>
+            <div class="mg-img-caption">Lat Pulldown</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/bent-over-barbell-row-resized.png" alt="Barbell row back muscles" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🔙</span>'"></div>
+            <div class="mg-img-caption">Bent-Over Barbell Row</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/seated-cable-row-resized.png" alt="Seated cable row" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>💺</span>'"></div>
+            <div class="mg-img-caption">Seated Cable Row</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/one-arm-dumbbell-row-resized.png" alt="Single arm dumbbell row" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>💪</span>'"></div>
+            <div class="mg-img-caption">Single-Arm Dumbbell Row</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/pull-up-resized.png" alt="Pull-up back muscles" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🧗</span>'"></div>
+            <div class="mg-img-caption">Pull-Up</div>
+          </div>
         </div>
-      </div>
-
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#FAECE7; color:#4A1B0C;">🍑 Glutes & Hamstrings</div>
-        <div class="gif-block"><span>🍑</span>Romanian Deadlift — targets both</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Glutes are the largest muscle in your body. Hamstrings run down the back of the thigh.</p>
-          <ul>
-            <li>Romanian Deadlift</li>
-            <li>Hip Thrust / Glute Bridge</li>
-            <li>Leg Curl Machine</li>
-            <li>Step-Ups</li>
-          </ul>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Vertical Pull (Lats)</h5>
+            <ul>
+              <li>Lat Pulldown (wide grip)</li>
+              <li>Lat Pulldown (close grip)</li>
+              <li>Pull-Up / Chin-Up</li>
+              <li>Assisted Pull-Up Machine</li>
+              <li>Cable Straight-Arm Pulldown</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Horizontal Pull (Mid-Back)</h5>
+            <ul>
+              <li>Bent-Over Barbell Row</li>
+              <li>Single-Arm Dumbbell Row</li>
+              <li>Seated Cable Row</li>
+              <li>T-Bar Row</li>
+              <li>Machine Row</li>
+              <li>Face Pull (rear delts + traps)</li>
+            </ul>
+          </div>
         </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> Think about pulling with your elbows, not your hands. Imagine your hands are just hooks — drive the elbows back and down to maximise lat engagement.</div>
       </div>
+    </div>
 
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#E6F1FB; color:#042C53;">💪 Biceps</div>
-        <div class="gif-block"><span>💪</span>Bicep Curl — classic isolation move</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Front of the upper arm. Responsible for elbow flexion (bending the arm).</p>
-          <ul>
-            <li>Dumbbell Bicep Curl</li>
-            <li>Barbell Curl</li>
-            <li>Hammer Curl</li>
-            <li>Cable Curl</li>
-          </ul>
+    <!-- LEGS / QUADS -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#FAEEDA; color:#633806;">🦵 Quadriceps <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#854F0B;">(Front of Thigh — 4 muscles)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The quadriceps are four muscles on the front of the thigh. They straighten the knee and are the primary movers in squatting, lunging, and climbing. Building strong quads improves knee stability and is essential for everyday functional movement.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/barbell-squat-resized.png" alt="Barbell squat quad muscles" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🦵</span>'"></div>
+            <div class="mg-img-caption">Barbell Back Squat</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/leg-press-resized.png" alt="Leg press machine quads" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏋️</span>'"></div>
+            <div class="mg-img-caption">Leg Press Machine</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/dumbbell-lunge-resized.png" alt="Dumbbell lunge legs" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏃</span>'"></div>
+            <div class="mg-img-caption">Dumbbell Lunge</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/leg-extension-resized.png" alt="Leg extension machine" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🦿</span>'"></div>
+            <div class="mg-img-caption">Leg Extension Machine</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/goblet-squat-resized.png" alt="Goblet squat" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏆</span>'"></div>
+            <div class="mg-img-caption">Goblet Squat</div>
+          </div>
         </div>
-      </div>
-
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#EEEDFE; color:#26215C;">💪 Triceps</div>
-        <div class="gif-block"><span>💪</span>Tricep Pushdown — great for beginners</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Back of the upper arm. Makes up ~2/3 of arm size. Key for all pressing movements.</p>
-          <ul>
-            <li>Tricep Pushdown (cable)</li>
-            <li>Skull Crusher</li>
-            <li>Overhead Tricep Extension</li>
-            <li>Dips</li>
-          </ul>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Free Weight</h5>
+            <ul>
+              <li>Barbell Back Squat</li>
+              <li>Front Squat</li>
+              <li>Goblet Squat (dumbbell/kettlebell)</li>
+              <li>Dumbbell Lunge</li>
+              <li>Reverse Lunge</li>
+              <li>Bulgarian Split Squat</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Machine & Bodyweight</h5>
+            <ul>
+              <li>Leg Press Machine</li>
+              <li>Leg Extension Machine</li>
+              <li>Hack Squat Machine</li>
+              <li>Step-Ups (with weight)</li>
+              <li>Bodyweight Squat</li>
+              <li>Wall Sit (isometric hold)</li>
+            </ul>
+          </div>
         </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> Start with goblet squats — hold a dumbbell at your chest and squat to depth. This naturally teaches good posture and keeps the weight manageable while your form develops.</div>
       </div>
+    </div>
 
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#F1EFE8; color:#2C2C2A;">🏔️ Shoulders (Deltoids)</div>
-        <div class="gif-block"><span>🏔️</span>Shoulder Press — works all three heads</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Three heads: front (anterior), side (lateral), and rear (posterior). Lateral raises give the "wide" shoulder look.</p>
-          <ul>
-            <li>Shoulder Press (dumbbell or barbell)</li>
-            <li>Lateral Raise</li>
-            <li>Front Raise</li>
-            <li>Rear Delt Fly</li>
-          </ul>
+    <!-- GLUTES & HAMSTRINGS -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#FAECE7; color:#4A1B0C;">🍑 Glutes & Hamstrings <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#993C1D;">(Posterior Chain)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The glutes (gluteus maximus, medius, and minimus) are the largest muscles in the body. They extend and rotate the hip. The hamstrings run down the back of the thigh and flex the knee. Together this is called the "posterior chain" — one of the most important areas for both athletic performance and injury prevention.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/romanian-deadlift-resized.png" alt="Romanian deadlift glutes hamstrings" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🍑</span>'"></div>
+            <div class="mg-img-caption">Romanian Deadlift</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/barbell-hip-thrust-resized.png" alt="Barbell hip thrust glutes" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏋️</span>'"></div>
+            <div class="mg-img-caption">Barbell Hip Thrust</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/leg-curl-resized.png" alt="Leg curl hamstrings" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🦵</span>'"></div>
+            <div class="mg-img-caption">Lying Leg Curl</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/sumo-squat-resized.png" alt="Sumo squat glutes" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🧘</span>'"></div>
+            <div class="mg-img-caption">Sumo Squat</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/glute-bridge-resized.png" alt="Glute bridge bodyweight" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🌉</span>'"></div>
+            <div class="mg-img-caption">Glute Bridge</div>
+          </div>
         </div>
-      </div>
-
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#EAF3DE; color:#173404;">🎯 Core & Abs</div>
-        <div class="gif-block"><span>🎯</span>Plank — foundation of core training</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Includes the rectus abdominis (six-pack), obliques (sides), and deeper stabilizing muscles.</p>
-          <ul>
-            <li>Plank</li>
-            <li>Dead Bug</li>
-            <li>Hanging Knee Raise</li>
-            <li>Cable Crunch</li>
-          </ul>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Glute-Focused</h5>
+            <ul>
+              <li>Barbell Hip Thrust</li>
+              <li>Glute Bridge (bodyweight or weighted)</li>
+              <li>Sumo Squat / Sumo Deadlift</li>
+              <li>Cable Kickback</li>
+              <li>Step-Ups</li>
+              <li>Bulgarian Split Squat</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Hamstring-Focused</h5>
+            <ul>
+              <li>Romanian Deadlift</li>
+              <li>Lying Leg Curl Machine</li>
+              <li>Seated Leg Curl Machine</li>
+              <li>Nordic Hamstring Curl</li>
+              <li>Good Morning</li>
+              <li>Deadlift (conventional)</li>
+            </ul>
+          </div>
         </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> Hip thrusts are highly effective and beginner-friendly. Start with bodyweight glute bridges on the floor, then progress to using a bench and adding weight over time.</div>
       </div>
+    </div>
 
-      <div class="muscle-card">
-        <div class="muscle-card-header" style="background:#E1F5EE; color:#04342C;">🏃 Calves</div>
-        <div class="gif-block"><span>🦶</span>Standing Calf Raise</div>
-        <div class="muscle-card-body">
-          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Gastrocnemius (outer) and soleus (inner). Often undertrained by beginners.</p>
-          <ul>
-            <li>Standing Calf Raise</li>
-            <li>Seated Calf Raise</li>
-            <li>Single-Leg Calf Raise</li>
-          </ul>
+    <!-- BICEPS -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#E6F1FB; color:#042C53;">💪 Biceps <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#185FA5;">(Biceps Brachii + Brachialis)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The biceps brachii has two heads (long and short) and is responsible for elbow flexion (curling the arm) and supination (rotating the palm upward). The brachialis lies underneath and adds thickness to the upper arm. Note: your biceps get significant work on all back/pulling exercises too.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/dumbbell-bicep-curl-resized.png" alt="Dumbbell bicep curl" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>💪</span>'"></div>
+            <div class="mg-img-caption">Dumbbell Bicep Curl</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/barbell-curl-resized.png" alt="Barbell curl biceps" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏋️</span>'"></div>
+            <div class="mg-img-caption">Barbell Curl</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/hammer-curl-resized.png" alt="Hammer curl brachialis" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🔨</span>'"></div>
+            <div class="mg-img-caption">Hammer Curl</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/cable-curl-resized.png" alt="Cable bicep curl" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🔁</span>'"></div>
+            <div class="mg-img-caption">Cable Curl</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/concentration-curl-resized.png" alt="Concentration curl" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🧘</span>'"></div>
+            <div class="mg-img-caption">Concentration Curl</div>
+          </div>
         </div>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Free Weight Curls</h5>
+            <ul>
+              <li>Dumbbell Bicep Curl (standing)</li>
+              <li>Barbell Curl</li>
+              <li>Alternating Dumbbell Curl</li>
+              <li>Hammer Curl</li>
+              <li>Incline Dumbbell Curl</li>
+              <li>Concentration Curl</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Cable & Machine</h5>
+            <ul>
+              <li>Cable Curl (low pulley)</li>
+              <li>Cable Rope Hammer Curl</li>
+              <li>Preacher Curl Machine</li>
+              <li>Chin-Up (supinated grip)</li>
+              <li>Spider Curl</li>
+              <li>Reverse Curl (brachialis focus)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> Avoid swinging your torso to lift the weight — that's momentum, not muscle. Pin your elbows at your sides and only the forearm should move.</div>
       </div>
+    </div>
 
+    <!-- TRICEPS -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#EEEDFE; color:#26215C;">🦾 Triceps <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#534AB7;">(Triceps Brachii — 3 heads)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The triceps make up roughly two-thirds of your upper arm size (bigger than the biceps). They have three heads: long, lateral, and medial. The triceps extend the elbow (straighten the arm) and are heavily involved in every pressing movement — bench press, shoulder press, and push-ups all train the triceps hard.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/tricep-pushdown-resized.png" alt="Cable tricep pushdown" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🦾</span>'"></div>
+            <div class="mg-img-caption">Cable Tricep Pushdown</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/skull-crusher-resized.png" alt="Skull crusher EZ bar" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>💀</span>'"></div>
+            <div class="mg-img-caption">Skull Crusher (EZ Bar)</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/tricep-dip-resized.png" alt="Tricep dips bench" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>⬇️</span>'"></div>
+            <div class="mg-img-caption">Tricep Dips</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/overhead-tricep-extension-resized.png" alt="Overhead tricep extension" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>⬆️</span>'"></div>
+            <div class="mg-img-caption">Overhead Tricep Extension</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/close-grip-bench-press-resized.png" alt="Close grip bench press triceps" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏋️</span>'"></div>
+            <div class="mg-img-caption">Close-Grip Bench Press</div>
+          </div>
+        </div>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Cable & Machine</h5>
+            <ul>
+              <li>Cable Tricep Pushdown (bar)</li>
+              <li>Cable Rope Pushdown</li>
+              <li>Overhead Cable Tricep Extension</li>
+              <li>Tricep Machine Press</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Free Weight & Bodyweight</h5>
+            <ul>
+              <li>Skull Crusher (EZ Bar or Dumbbell)</li>
+              <li>Overhead Dumbbell Extension</li>
+              <li>Close-Grip Bench Press</li>
+              <li>Tricep Dips (bars or bench)</li>
+              <li>Diamond Push-Up</li>
+              <li>Kickback (dumbbell)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> If you want bigger arms, prioritise the triceps — they're larger than the biceps. Cable pushdowns are the safest and most beginner-friendly starting point.</div>
+      </div>
+    </div>
+
+    <!-- SHOULDERS -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#F1EFE8; color:#2C2C2A;">🏔️ Shoulders <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#5F5E5A;">(Deltoids — Anterior, Lateral & Posterior)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The deltoids have three distinct heads. The anterior (front) deltoid handles pressing and front raises. The lateral (side) deltoid creates the "capped" wide-shoulder look — lateral raises directly target this. The posterior (rear) deltoid is crucial for posture and is often undertrained by beginners who focus on pressing movements.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/dumbbell-shoulder-press-resized.png" alt="Dumbbell shoulder press" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏔️</span>'"></div>
+            <div class="mg-img-caption">Dumbbell Shoulder Press</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/dumbbell-lateral-raise-resized.png" alt="Dumbbell lateral raise" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>↔️</span>'"></div>
+            <div class="mg-img-caption">Lateral Raise</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/barbell-overhead-press-resized.png" alt="Barbell overhead press" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>⬆️</span>'"></div>
+            <div class="mg-img-caption">Barbell Overhead Press</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/rear-delt-fly-resized.png" alt="Rear delt fly" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🦅</span>'"></div>
+            <div class="mg-img-caption">Rear Delt Fly</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/arnold-press-resized.png" alt="Arnold press shoulders" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🔄</span>'"></div>
+            <div class="mg-img-caption">Arnold Press</div>
+          </div>
+        </div>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Press Movements</h5>
+            <ul>
+              <li>Dumbbell Shoulder Press (seated)</li>
+              <li>Barbell Overhead Press (standing)</li>
+              <li>Arnold Press</li>
+              <li>Machine Shoulder Press</li>
+              <li>Pike Push-Up (bodyweight)</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Raise & Isolation</h5>
+            <ul>
+              <li>Lateral Raise (dumbbell)</li>
+              <li>Cable Lateral Raise</li>
+              <li>Front Raise (dumbbell or plate)</li>
+              <li>Rear Delt Fly (dumbbell)</li>
+              <li>Face Pull (cable — rear delt + traps)</li>
+              <li>Upright Row</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> Don't neglect rear delts — they counterbalance all your pressing and protect your shoulder joints. Face pulls and rear delt flies are easy to add at the end of any session.</div>
+      </div>
+    </div>
+
+    <!-- CORE -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#EAF3DE; color:#173404;">🎯 Core & Abs <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#3B6D11;">(Rectus Abdominis, Obliques, Transverse Abdominis)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The "core" is far more than just your visible abs. It includes the rectus abdominis (the six-pack muscle), the obliques (your sides), the transverse abdominis (deep stabilising muscle), and the lower back. A strong core protects the spine, improves posture, and transfers force between your upper and lower body during virtually every exercise.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/plank-resized.png" alt="Plank core abs muscles" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🎯</span>'"></div>
+            <div class="mg-img-caption">Plank</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/hanging-leg-raise-resized.png" alt="Hanging leg raise abs" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🧗</span>'"></div>
+            <div class="mg-img-caption">Hanging Leg Raise</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/cable-crunch-resized.png" alt="Cable crunch abs" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🔁</span>'"></div>
+            <div class="mg-img-caption">Cable Crunch</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/side-plank-resized.png" alt="Side plank obliques" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>↙️</span>'"></div>
+            <div class="mg-img-caption">Side Plank (Obliques)</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/russian-twist-resized.png" alt="Russian twist obliques" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🔄</span>'"></div>
+            <div class="mg-img-caption">Russian Twist</div>
+          </div>
+        </div>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Stability & Anti-Rotation</h5>
+            <ul>
+              <li>Plank (forearm or straight arm)</li>
+              <li>Side Plank</li>
+              <li>Dead Bug</li>
+              <li>Bird Dog</li>
+              <li>Pallof Press (cable)</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Dynamic / Loaded</h5>
+            <ul>
+              <li>Hanging Knee Raise</li>
+              <li>Hanging Leg Raise</li>
+              <li>Cable Crunch (kneeling)</li>
+              <li>Ab Wheel Rollout</li>
+              <li>Russian Twist</li>
+              <li>Bicycle Crunch</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> Visible abs are primarily a result of low body fat, not ab exercises alone. Core training builds strength and stability — but diet determines whether you can see it. Both matter.</div>
+      </div>
+    </div>
+
+    <!-- CALVES -->
+    <div class="mg-section">
+      <div class="mg-header" style="background:#E1F5EE; color:#04342C;">🦶 Calves <span style="font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:400;color:#0F6E56;">(Gastrocnemius & Soleus)</span></div>
+      <div class="mg-body">
+        <p class="mg-desc">The calves consist of two muscles: the gastrocnemius (the visible outer muscle that creates the calf "shape") and the soleus (the deeper, flatter muscle beneath it). The gastrocnemius is best targeted with a straight leg; the soleus with a bent knee. Calves are notoriously stubborn to grow and require consistent, high-rep training.</p>
+        <div class="mg-images">
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/standing-calf-raise-resized.png" alt="Standing calf raise gastrocnemius" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🦶</span>'"></div>
+            <div class="mg-img-caption">Standing Calf Raise</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/seated-calf-raise-resized.png" alt="Seated calf raise soleus" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>💺</span>'"></div>
+            <div class="mg-img-caption">Seated Calf Raise (Soleus)</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/leg-press-calf-raise-resized.png" alt="Leg press calf raise" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🏋️</span>'"></div>
+            <div class="mg-img-caption">Leg Press Calf Raise</div>
+          </div>
+          <div class="mg-img-slot">
+            <div class="mg-img-wrap"><img src="https://weighttraining.guide/wp-content/uploads/2016/10/single-leg-calf-raise-resized.png" alt="Single leg calf raise" onerror="this.parentElement.innerHTML='<span style=\'font-size:2rem;\'>🦵</span>'"></div>
+            <div class="mg-img-caption">Single-Leg Calf Raise</div>
+          </div>
+        </div>
+        <div class="mg-exercises">
+          <div class="mg-ex-col">
+            <h5>Gastrocnemius (Straight Leg)</h5>
+            <ul>
+              <li>Standing Calf Raise (machine)</li>
+              <li>Single-Leg Standing Calf Raise</li>
+              <li>Leg Press Calf Raise</li>
+              <li>Bodyweight Standing Calf Raise</li>
+            </ul>
+          </div>
+          <div class="mg-ex-col">
+            <h5>Soleus (Bent Knee)</h5>
+            <ul>
+              <li>Seated Calf Raise (machine)</li>
+              <li>Seated Dumbbell Calf Raise</li>
+              <li>Donkey Calf Raise</li>
+              <li>Jump Rope (conditioning + calves)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mg-tip"><strong>Beginner tip:</strong> Calves respond well to higher reps (15–25) and a full range of motion — stretch all the way down, pause at the bottom, and rise up onto the ball of your foot. Rushing kills the effect.</div>
+      </div>
     </div>
 
     <div class="info-box">
-      <strong>Note on GIFs:</strong> This guide references exercise demonstrations. For free, high-quality exercise GIFs and instructions, check out <strong>ExerciseLibrary.app</strong>, <strong>LiftLookup.com</strong>, and <strong>GymVisual.com</strong>. These are excellent beginner-friendly resources with thousands of exercises catalogued.
+      <strong>Image sources & further learning:</strong> For thousands of free animated exercise GIFs, visit <strong>WeightTraining.guide</strong>, <strong>ExerciseLibrary.app</strong>, and <strong>GymVisual.com</strong>. All three have excellent beginner-friendly guides with muscle highlighting similar to the anatomical images above.
     </div>
 
     <h3>Movement Patterns — The Big Picture</h3>
-    <p>Rather than thinking only in terms of muscle groups, experienced trainers think in <strong>movement patterns</strong>. A balanced program covers all of these:</p>
+    <p>A balanced program covers all six fundamental movement patterns each week. If you hit all six, you'll develop proportionate strength and avoid the imbalances that lead to injury.</p>
     <div class="card-grid">
-      <div class="card"><h4>Push</h4><p>Bench press, push-ups, shoulder press, dips</p></div>
-      <div class="card"><h4>Pull</h4><p>Rows, lat pulldowns, pull-ups, face pulls</p></div>
-      <div class="card"><h4>Squat / Knee Dominant</h4><p>Squats, lunges, leg press, step-ups</p></div>
-      <div class="card"><h4>Hinge / Hip Dominant</h4><p>Deadlifts, Romanian deadlifts, hip thrusts, kettlebell swings</p></div>
-      <div class="card"><h4>Carry</h4><p>Farmer's walks, suitcase carries — often forgotten but incredibly functional</p></div>
-      <div class="card"><h4>Core / Anti-Rotation</h4><p>Planks, dead bugs, pallof press</p></div>
+      <div class="card"><h4>Push</h4><p>Bench press, push-ups, shoulder press, dips — chest, front delts, triceps</p></div>
+      <div class="card"><h4>Pull</h4><p>Rows, lat pulldowns, pull-ups, face pulls — lats, mid-back, biceps</p></div>
+      <div class="card"><h4>Squat / Knee Dominant</h4><p>Squats, lunges, leg press, step-ups — quads, glutes</p></div>
+      <div class="card"><h4>Hinge / Hip Dominant</h4><p>Deadlifts, Romanian deadlifts, hip thrusts — glutes, hamstrings, lower back</p></div>
+      <div class="card"><h4>Carry</h4><p>Farmer's walks, suitcase carries — grip, core, traps. Often forgotten but incredibly functional.</p></div>
+      <div class="card"><h4>Core / Anti-Rotation</h4><p>Planks, dead bugs, pallof press — transverse abdominis, obliques, stabilisers</p></div>
     </div>
   </div>
 </section>
