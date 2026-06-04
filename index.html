@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Beginner's Gym & Exercise Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #3B6D11;
+    --green-light: #EAF3DE;
+    --green-mid: #639922;
+    --green-dark: #27500A;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --teal: #0F6E56;
+    --teal-light: #E1F5EE;
+    --coral: #993C1D;
+    --coral-light: #FAECE7;
+    --gray: #5F5E5A;
+    --gray-light: #F1EFE8;
+    --gray-dark: #2C2C2A;
+    --text: #1a1a18;
+    --text-muted: #5F5E5A;
+    --bg: #fafaf7;
+    --white: #ffffff;
+    --border: rgba(0,0,0,0.1);
+    --nav-h: 64px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', serif;
+    line-height: 1.2;
+    color: var(--gray-dark);
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 100;
+    gap: 1rem;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--green-dark);
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.15rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--gray);
+    padding: 0.3rem 0.55rem;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    background: var(--green-light);
+    color: var(--green-dark);
+  }
+
+  /* SECTIONS */
+  section {
+    display: none;
+    min-height: 100vh;
+    padding: calc(var(--nav-h) + 3rem) 2rem 4rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  section.active { display: block; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--green-light) 0%, var(--teal-light) 100%);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(99,153,34,0.12);
+  }
+
+  .hero h1 { font-size: 2.6rem; margin-bottom: 1rem; color: var(--green-dark); }
+  .hero p { font-size: 1.05rem; color: var(--gray); max-width: 560px; }
+
+  .disclaimer {
+    background: var(--amber-light);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #633806;
+  }
+
+  .disclaimer strong { display: block; margin-bottom: 0.25rem; color: var(--amber); }
+
+  /* CONTENT */
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 { font-size: 1.9rem; margin-bottom: 1rem; border-bottom: 2px solid var(--green-light); padding-bottom: 0.5rem; }
+  .content-section h3 { font-size: 1.3rem; margin: 1.5rem 0 0.75rem; color: var(--green-dark); }
+  .content-section h4 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: var(--teal); }
+  .content-section p { margin-bottom: 0.85rem; color: var(--text-muted); }
+  .content-section ul, .content-section ol { padding-left: 1.5rem; color: var(--text-muted); margin-bottom: 1rem; }
+  .content-section li { margin-bottom: 0.4rem; }
+
+  /* CARDS */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+
+  .card-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card h4 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--gray-dark); }
+  .card p { font-size: 0.875rem; color: var(--text-muted); margin: 0; }
+
+  /* MUSCLE DIAGRAM */
+  .muscle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .muscle-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .muscle-card-header {
+    padding: 0.75rem 1rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .muscle-card-body {
+    padding: 0 1rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .muscle-card-body ul { padding-left: 1.25rem; margin: 0; }
+  .muscle-card-body li { margin-bottom: 0.2rem; }
+
+  /* GIF placeholder */
+  .gif-block {
+    background: var(--gray-light);
+    border-radius: 10px;
+    padding: 2.5rem 1rem;
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin: 1rem 0;
+    border: 1px dashed #b4b2a9;
+  }
+
+  .gif-block span { display: block; font-size: 2rem; margin-bottom: 0.5rem; }
+
+  /* SUPPLEMENT TABLE */
+  .supp-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+  .supp-table th { background: var(--green-light); color: var(--green-dark); padding: 0.65rem 0.75rem; text-align: left; font-weight: 600; }
+  .supp-table td { padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
+  .supp-table tr:last-child td { border-bottom: none; }
+  .supp-table tr:hover td { background: var(--bg); }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .badge-yes { background: var(--green-light); color: var(--green-dark); }
+  .badge-no { background: var(--coral-light); color: var(--coral); }
+  .badge-maybe { background: var(--amber-light); color: var(--amber); }
+
+  /* FAQ */
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  .faq-q {
+    padding: 1rem 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+    color: var(--gray-dark);
+  }
+
+  .faq-q:hover { background: var(--bg); }
+
+  .faq-q .chevron {
+    transition: transform 0.2s;
+    font-size: 0.75rem;
+    color: var(--gray);
+    flex-shrink: 0;
+  }
+
+  .faq-item.open .faq-q .chevron { transform: rotate(180deg); }
+
+  .faq-a {
+    display: none;
+    padding: 0 1.25rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-item.open .faq-a { display: block; }
+
+  /* PILL TABS */
+  .pill-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pill-tab {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--gray);
+    transition: all 0.15s;
+  }
+
+  .pill-tab.active, .pill-tab:hover {
+    background: var(--green-mid);
+    color: var(--white);
+    border-color: var(--green-mid);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* HOME GRID */
+  .home-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .home-feature-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+  }
+
+  .home-feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  .home-feature-card .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--green-light);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .home-feature-card h3 {
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    color: var(--gray-dark);
+  }
+
+  .home-feature-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--teal-light);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #04342C;
+  }
+
+  .info-box strong { color: var(--teal); }
+
+  /* WORKOUT BLOCK */
+  .workout-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .workout-block h4 { margin: 0 0 0.75rem; color: var(--green-dark); display: flex; align-items: center; gap: 0.5rem; }
+  .workout-block p { font-size: 0.88rem; margin: 0 0 0.5rem; }
+  .workout-block ul { font-size: 0.88rem; padding-left: 1.25rem; }
+
+  /* BODY TYPE GRID */
+  .body-type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 600px) {
+    .body-type-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    nav { justify-content: center; }
+    .hero h1 { font-size: 1.8rem; }
+  }
+
+  .body-type-card {
+    text-align: center;
+    padding: 1.25rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .body-type-card .body-fig {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .body-type-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--gray-dark); font-family: 'DM Sans', sans-serif; font-weight: 600; }
+  .body-type-card p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+  /* CALORIE CALC */
+  .calc-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .calc-box h3 { font-size: 1.1rem; margin-bottom: 1rem; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+
+  .calc-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .calc-row label { font-size: 0.85rem; color: var(--gray); min-width: 110px; }
+  .calc-row input, .calc-row select {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    flex: 1;
+    min-width: 100px;
+    max-width: 200px;
+  }
+
+  .calc-result {
+    background: var(--green-light);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--green-dark);
+    margin-top: 0.75rem;
+    display: none;
+  }
+
+  .calc-result strong { font-size: 1.4rem; display: block; }
+
+  .btn-calc {
+    background: var(--green-mid);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.25rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.15s;
+  }
+
+  .btn-calc:hover { background: var(--green-dark); }
+
+  /* NO HOME WORKOUT */
+  .no-gym-workout {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+  }
+
+  .no-gym-header {
+    background: var(--green-light);
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    color: var(--green-dark);
+    font-size: 0.95rem;
+  }
+
+  .no-gym-body { padding: 1rem 1.25rem; }
+
+  .exercise-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+  }
+
+  .exercise-row:last-child { border-bottom: none; }
+  .exercise-name { color: var(--gray-dark); font-weight: 500; }
+  .exercise-detail { color: var(--gray); font-size: 0.82rem; }
+
+  /* QUOTE */
+  blockquote {
+    border-left: 4px solid var(--green-mid);
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.25rem;
+    background: var(--green-light);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--green-dark);
+    font-size: 1rem;
+  }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: 0.4rem 0 0.4rem 1.75rem;
+    position: relative;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+  .checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green-mid);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#" onclick="showSection('home')">💪 GymGuide</a>
+  <div class="nav-links">
+    <a href="#" onclick="showSection('home')" class="active" id="nav-home">Home</a>
+    <a href="#" onclick="showSection('scratch')" id="nav-scratch">Starting Out</a>
+    <a href="#" onclick="showSection('workouts')" id="nav-workouts">Workouts</a>
+    <a href="#" onclick="showSection('muscles')" id="nav-muscles">Muscle Groups</a>
+    <a href="#" onclick="showSection('health')" id="nav-health">Health</a>
+    <a href="#" onclick="showSection('hygiene')" id="nav-hygiene">Hygiene</a>
+    <a href="#" onclick="showSection('diet')" id="nav-diet">Diet</a>
+    <a href="#" onclick="showSection('supplements')" id="nav-supplements">Supplements</a>
+    <a href="#" onclick="showSection('faq')" id="nav-faq">Questions</a>
+  </div>
+</nav>
+
+<!-- ============ HOME ============ -->
+<section id="home" class="active">
+  <div class="hero">
+    <h1>Your First Step Starts Here</h1>
+    <p>A no-nonsense, beginner-friendly guide to the gym, exercise, nutrition, and building a sustainable healthy lifestyle. No gatekeeping. No pressure.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>⚠️ Important Disclaimer</strong>
+    I am not a professional trainer, dietitian, or medical professional. Everything on this site is for general informational purposes only. Please do your own research and consult a qualified professional for personalized guidance — especially before starting a new exercise or diet program.
+  </div>
+
+  <div class="content-section">
+    <h2>Welcome</h2>
+    <p>One of the most important things to understand before you begin: <strong>everybody is different.</strong> Your body type, your genetics, the environment you grew up in, your metabolism, your lifestyle — all of it shapes what your journey will look like. There is no one-size-fits-all answer, and don't let anyone online make you feel otherwise.</p>
+
+    <blockquote>"The hardest part about going to the gym is going to the gym."</blockquote>
+
+    <p>Getting past that front door is genuinely the biggest obstacle most beginners face. Once you're inside, the rest follows naturally over time. This guide exists to help remove that intimidation.</p>
+
+    <h3>The Two Big Goals — Simplified</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon" style="background:#FAEEDA;">⚖️</div>
+        <h4>Losing Weight</h4>
+        <p>At its core, weight loss comes down to a <strong>calorie deficit</strong> — burning more calories than you consume. Exercise helps, but diet is the bigger driver.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:#EAF3DE;">💪</div>
+        <h4>Building Muscle</h4>
+        <p>Muscle is built through <strong>progressive resistance exercise</strong> and adequate protein intake. Rest and recovery are just as important as the work itself.</p>
+      </div>
+    </div>
+
+    <h3>A Word on Gym Influencers</h3>
+    <p>The internet is absolutely saturated with gym influencers — and while their dedication and results can be genuinely impressive, it's critical to understand that what you see online often represents years (sometimes decades) of effort, specific genetics, and in many cases, assistance from substances that are never mentioned. <strong>Not everyone is destined to achieve that look, and that is completely fine.</strong></p>
+    <p>Set your own goals. Measure your own progress. The only body you need to compare yourself to is the one you had last month.</p>
+
+    <h3>What's in This Guide</h3>
+    <div class="home-feature-grid">
+      <div class="home-feature-card" onclick="showSection('scratch')">
+        <div class="num">01</div>
+        <h3>Starting From Scratch</h3>
+        <p>Choosing a gym, what to bring, etiquette, terminology</p>
+      </div>
+      <div class="home-feature-card" onclick="showSection('workouts')">
+        <div class="num">02</div>
+        <h3>Types of Workouts</h3>
+        <p>Cardio, strength, splits, HIIT, and more</p>
+      </div>
+      <div class="home-feature-card" onclick="showSection('muscles')">
+        <div class="num">03</div>
+        <h3>Muscle Groups</h3>
+        <p>What muscles exist and what exercises target them</p>
+      </div>
+      <div class="home-feature-card" onclick="showSection('health')">
+        <div class="num">04</div>
+        <h3>Health & Recovery</h3>
+        <p>Sleep, body types, stretching, rest days</p>
+      </div>
+      <div class="home-feature-card" onclick="showSection('hygiene')">
+        <div class="num">05</div>
+        <h3>Hygiene</h3>
+        <p>Gym etiquette, clothes care, skin health</p>
+      </div>
+      <div class="home-feature-card" onclick="showSection('diet')">
+        <div class="num">06</div>
+        <h3>Diet & Eating Tips</h3>
+        <p>Calories, macros, hydration, gut health</p>
+      </div>
+      <div class="home-feature-card" onclick="showSection('supplements')">
+        <div class="num">07</div>
+        <h3>Supplements</h3>
+        <p>Creatine, protein, pre-workout — what's worth it</p>
+      </div>
+      <div class="home-feature-card" onclick="showSection('faq')">
+        <div class="num">08</div>
+        <h3>Common Questions</h3>
+        <p>The questions every beginner actually Googles</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STARTING FROM SCRATCH ============ -->
+<section id="scratch">
+  <div class="content-section">
+    <h2>Starting From Scratch</h2>
+
+    <h3>Choosing a Gym</h3>
+    <p>The "best" gym is the one you'll actually go to. When visiting gyms before signing up, ask yourself:</p>
+    <ul>
+      <li><strong>Is it conveniently located?</strong> A gym near your home or work dramatically increases how often you'll go.</li>
+      <li><strong>Does the energy feel right?</strong> Some gyms are high-intensity and competitive; others are relaxed and community-oriented. Neither is better — pick what suits your personality.</li>
+      <li><strong>What equipment do they have?</strong> For a beginner, any gym with machines, dumbbells, and cardio equipment is sufficient.</li>
+      <li><strong>What are the peak hours?</strong> A crowded gym at 6pm might feel overwhelming at first. Consider off-peak times.</li>
+    </ul>
+
+    <h3>How to Sign Up</h3>
+    <p>Most gyms offer a free trial or day pass — take advantage of this before committing. When signing up, watch for: cancellation policies (some require 30–60 days notice), initiation fees, and contract length. Month-to-month memberships offer the most flexibility for beginners who are still finding their footing.</p>
+
+    <h3>What to Bring</h3>
+    <ul class="checklist">
+      <li>Water bottle (reusable, ideally at least 750ml)</li>
+      <li>Small towel for wiping down equipment and your face</li>
+      <li>Lock for the locker room</li>
+      <li>Headphones (wireless are easiest)</li>
+      <li>Properly fitting athletic shoes — flat shoes for lifting, cushioned for running</li>
+      <li>Change of clothes if you plan to shower there</li>
+      <li>Any workout plan or notes you need (your phone works fine)</li>
+    </ul>
+
+    <h3>What to Wear</h3>
+    <p>Comfort and function over appearance. Breathable, moisture-wicking fabric helps manage sweat. Avoid jeans or restrictive clothing. For lifting, <strong>flat-soled shoes</strong> (like Converse or dedicated lifting shoes) are better than thick running shoes — they give you better ground contact and stability.</p>
+
+    <h3>Locker Room Etiquette</h3>
+    <ul>
+      <li>Don't leave belongings spread across multiple lockers during busy hours</li>
+      <li>Wear flip flops in communal showers</li>
+      <li>Keep noise to a minimum — some people use the locker room to mentally prepare or decompress</li>
+      <li>Don't linger or take up mirror space longer than needed during rush hours</li>
+    </ul>
+
+    <h3>On the Gym Floor</h3>
+    <p><strong>Asking to use a machine:</strong> If someone is sitting on a machine between sets, it's fine to politely ask "Are you still using this?" Most people will say yes (and they're still resting) or let you "work in" — alternating sets with them. This is completely normal and expected gym culture.</p>
+    <p><strong>Asking for advice:</strong> Don't be afraid to ask gym staff or even experienced gym-goers for guidance. Most people who spend serious time in the gym are happy to help beginners — they were all new once too. Just pick the right moment (not mid-set).</p>
+
+    <div class="info-box">
+      <strong>Remember:</strong> Nobody in the gym is watching you as closely as you think. Everyone is focused on their own workout. The anxiety you feel walking in is shared by nearly every beginner — and it fades faster than you'd expect.
+    </div>
+
+    <h3>No Gym? No Problem — A Beginner Home Workout</h3>
+    <p>You don't need a gym to start building fitness habits. This 20-minute routine requires zero equipment:</p>
+
+    <div class="no-gym-workout">
+      <div class="no-gym-header">🏠 20-Minute No-Equipment Routine (3x per week)</div>
+      <div class="no-gym-body">
+        <div class="exercise-row">
+          <span class="exercise-name">Bodyweight Squats</span>
+          <span class="exercise-detail">3 sets × 12 reps</span>
+        </div>
+        <div class="exercise-row">
+          <span class="exercise-name">Push-Ups (or Knee Push-Ups)</span>
+          <span class="exercise-detail">3 sets × 8–12 reps</span>
+        </div>
+        <div class="exercise-row">
+          <span class="exercise-name">Glute Bridges</span>
+          <span class="exercise-detail">3 sets × 15 reps</span>
+        </div>
+        <div class="exercise-row">
+          <span class="exercise-name">Plank Hold</span>
+          <span class="exercise-detail">3 sets × 20–30 seconds</span>
+        </div>
+        <div class="exercise-row">
+          <span class="exercise-name">Reverse Lunges</span>
+          <span class="exercise-detail">3 sets × 10 reps each leg</span>
+        </div>
+        <div class="exercise-row">
+          <span class="exercise-name">Mountain Climbers</span>
+          <span class="exercise-detail">3 sets × 20 seconds</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Basic Terminology</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Rep (Repetition)</h4>
+        <p>One complete movement of an exercise. One squat down and back up = 1 rep.</p>
+      </div>
+      <div class="card">
+        <h4>Set</h4>
+        <p>A group of reps performed without stopping. "3 sets of 10" means 10 reps, rest, 10 reps, rest, 10 reps.</p>
+      </div>
+      <div class="card">
+        <h4>Rest Period</h4>
+        <p>The break between sets. Typically 60–90 seconds for beginners.</p>
+      </div>
+      <div class="card">
+        <h4>Progressive Overload (PO)</h4>
+        <p>Gradually increasing the challenge over time — more weight, more reps, or less rest. The engine behind all progress.</p>
+      </div>
+      <div class="card">
+        <h4>Personal Record (PR)</h4>
+        <p>Your best performance on a given exercise — heaviest weight lifted, most reps completed, etc.</p>
+      </div>
+      <div class="card">
+        <h4>Compound Movement</h4>
+        <p>An exercise that works multiple muscle groups at once (e.g., squats, deadlifts, bench press).</p>
+      </div>
+      <div class="card">
+        <h4>Isolation Exercise</h4>
+        <p>Targets a single specific muscle (e.g., bicep curl, leg extension).</p>
+      </div>
+      <div class="card">
+        <h4>Hypertrophy</h4>
+        <p>Muscle growth — the increase in size of muscle fibers in response to training.</p>
+      </div>
+      <div class="card">
+        <h4>Rate of Perceived Exertion (RPE)</h4>
+        <p>A 1–10 scale of how hard an exercise feels. RPE 7 means you could do a few more reps but it's already challenging.</p>
+      </div>
+      <div class="card">
+        <h4>Delayed Onset Muscle Soreness (DOMS)</h4>
+        <p>The soreness you feel 24–48 hours after a workout. It's normal, especially as a beginner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TYPES OF WORKOUTS ============ -->
+<section id="workouts">
+  <div class="content-section">
+    <h2>Types of Workouts</h2>
+    <p>There's no single "best" type of workout — the right one depends on your goals, schedule, and what you'll actually enjoy and stick to. Here's a breakdown of the major categories.</p>
+
+    <h3>Cardio Training</h3>
+    <div class="workout-block">
+      <h4>🏃 Steady-State Cardio</h4>
+      <p>Sustained, moderate-intensity effort for an extended period — jogging, cycling, swimming at a consistent pace. Great for building cardiovascular endurance and burning calories.</p>
+    </div>
+
+    <div class="workout-block">
+      <h4>⚡ High-Intensity Interval Training (HIIT)</h4>
+      <p>Short bursts of maximum effort alternated with brief recovery periods. Example: 30 seconds of sprinting, 30 seconds of walking, repeated 10 times. Burns a lot of calories in less time and keeps your metabolism elevated for hours after.</p>
+    </div>
+
+    <div class="workout-block">
+      <h4>🌲 Fartlek Training</h4>
+      <p>Swedish for "speed play." An unstructured cardio method where you vary your pace freely during a run — sprint to that tree, jog to the corner, walk for a minute. Less rigid than HIIT but achieves similar benefits. Great for outdoor runners.</p>
+    </div>
+
+    <div class="workout-block">
+      <h4>🏁 Sprint Training</h4>
+      <p>Maximum-effort short distances with full recovery between efforts. Builds explosive power and burns significant calories. Usually performed on a track, treadmill, or open field. Rest fully (2–3 minutes) between sprints to maintain quality.</p>
+    </div>
+
+    <h3>Strength Training Structures</h3>
+
+    <div class="workout-block">
+      <h4>💪 Full Body Workout</h4>
+      <p>Every major muscle group is trained in a single session. Ideal for beginners or those training 2–3 days per week. You get more frequency per muscle group and if you miss a day, you haven't neglected any area for a whole week.</p>
+    </div>
+
+    <div class="workout-block">
+      <h4>🔄 Push / Pull / Legs (PPL) Split</h4>
+      <p>A popular training split:</p>
+      <ul>
+        <li><strong>Push Day:</strong> Chest, shoulders, triceps (pressing movements)</li>
+        <li><strong>Pull Day:</strong> Back, biceps (pulling movements)</li>
+        <li><strong>Legs Day:</strong> Quads, hamstrings, glutes, calves</li>
+      </ul>
+      <p>Can be done 3 days (once through) or 6 days (twice through) per week. While one group works, the other rests.</p>
+    </div>
+
+    <div class="workout-block">
+      <h4>🎯 Muscle Isolation / Bro Split</h4>
+      <p>Each day focuses on one or two muscle groups — e.g., Monday Chest, Tuesday Back, Wednesday Shoulders. Popular in bodybuilding. Each muscle gets worked once per week with higher volume. Not optimal for beginners but widely used.</p>
+    </div>
+
+    <div class="workout-block">
+      <h4>🔩 Core Session</h4>
+      <p>A dedicated session focused on your midsection and stabilizing muscles — abs, obliques, lower back, and hip flexors. Can be done as a standalone workout or tagged onto the end of another session. 15–20 minutes is usually sufficient.</p>
+    </div>
+
+    <h3>Training Formats</h3>
+
+    <div class="workout-block">
+      <h4>⏱️ Every Minute on the Minute (EMOM)</h4>
+      <p>At the start of every minute, perform a set number of reps. Rest for whatever time remains in that minute, then repeat when the next minute starts. Example: 10 push-ups at the top of every minute for 10 minutes. The faster you complete the reps, the more rest you get — but the work stays consistent.</p>
+    </div>
+
+    <div class="workout-block">
+      <h4>🔁 As Many Rounds/Reps As Possible (AMRAP)</h4>
+      <p>Complete as many rounds of a circuit as possible within a set time. Example: In 12 minutes, complete as many rounds as you can of: 10 squats, 8 push-ups, 6 burpees. Excellent for building work capacity and conditioning.</p>
+    </div>
+
+    <div class="workout-block">
+      <h4>📅 Training Splits (Weekly Structure)</h4>
+      <p>A "split" refers to how you divide your training across the week. Common beginner splits:</p>
+      <ul>
+        <li><strong>3-Day Full Body:</strong> Monday / Wednesday / Friday</li>
+        <li><strong>4-Day Upper/Lower:</strong> Upper body twice, lower body twice per week</li>
+        <li><strong>PPL (3 or 6 days):</strong> Push / Pull / Legs, run once or twice per week</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <strong>The Golden Rule:</strong> <strong>Progressive Overload (PO)</strong> — gradually increasing the demand on your muscles over time — is the foundation of all progress regardless of which workout type you choose. You can overload by adding weight, more reps, more sets, slower tempo, or less rest time. Pick one lever at a time.
+    </div>
+
+    <h3>Supersets & Techniques</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Superset</h4>
+        <p>Two exercises performed back-to-back with no rest between them. Saves time and increases intensity.</p>
+      </div>
+      <div class="card">
+        <h4>Drop Set</h4>
+        <p>After reaching failure at one weight, immediately reduce the weight and continue. Used to push muscles past normal fatigue.</p>
+      </div>
+      <div class="card">
+        <h4>Tempo Training</h4>
+        <p>Deliberately controlling the speed of a rep — e.g., 3 seconds down, 1 second pause, 1 second up. Increases time under tension.</p>
+      </div>
+      <div class="card">
+        <h4>Circuit Training</h4>
+        <p>Moving through multiple exercises in sequence with minimal rest. Builds both strength and cardio fitness simultaneously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MUSCLE GROUPS ============ -->
+<section id="muscles">
+  <div class="content-section">
+    <h2>Muscle Groups</h2>
+    <p>Understanding which muscles do what helps you build a balanced training program and avoid neglecting certain areas. Here are the major muscle groups and key exercises for each.</p>
+
+    <div class="muscle-grid">
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#EAF3DE; color:#27500A;">🫁 Chest (Pectorals)</div>
+        <div class="gif-block"><span>🏋️</span>Bench Press — flat, incline, or decline</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Works the pectoralis major and minor. Responsible for pushing movements.</p>
+          <ul>
+            <li>Bench Press (barbell or dumbbell)</li>
+            <li>Push-Ups</li>
+            <li>Chest Fly (cable or dumbbell)</li>
+            <li>Chest Press Machine</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#E1F5EE; color:#085041;">🔙 Back (Latissimus Dorsi / Lats)</div>
+        <div class="gif-block"><span>🏋️</span>Lat Pulldown — essential for beginners</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">The large wing-shaped muscles. Key for posture and all pulling movements.</p>
+          <ul>
+            <li>Lat Pulldown</li>
+            <li>Seated Row</li>
+            <li>Pull-Ups / Assisted Pull-Ups</li>
+            <li>Single-Arm Dumbbell Row</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#FAEEDA; color:#633806;">🦵 Legs (Quadriceps)</div>
+        <div class="gif-block"><span>🦵</span>Squat — king of leg exercises</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Front of the thigh. Primary movers in squatting and knee extension.</p>
+          <ul>
+            <li>Squats (bodyweight or barbell)</li>
+            <li>Leg Press</li>
+            <li>Leg Extension Machine</li>
+            <li>Lunges</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#FAECE7; color:#4A1B0C;">🍑 Glutes & Hamstrings</div>
+        <div class="gif-block"><span>🍑</span>Romanian Deadlift — targets both</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Glutes are the largest muscle in your body. Hamstrings run down the back of the thigh.</p>
+          <ul>
+            <li>Romanian Deadlift</li>
+            <li>Hip Thrust / Glute Bridge</li>
+            <li>Leg Curl Machine</li>
+            <li>Step-Ups</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#E6F1FB; color:#042C53;">💪 Biceps</div>
+        <div class="gif-block"><span>💪</span>Bicep Curl — classic isolation move</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Front of the upper arm. Responsible for elbow flexion (bending the arm).</p>
+          <ul>
+            <li>Dumbbell Bicep Curl</li>
+            <li>Barbell Curl</li>
+            <li>Hammer Curl</li>
+            <li>Cable Curl</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#EEEDFE; color:#26215C;">💪 Triceps</div>
+        <div class="gif-block"><span>💪</span>Tricep Pushdown — great for beginners</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Back of the upper arm. Makes up ~2/3 of arm size. Key for all pressing movements.</p>
+          <ul>
+            <li>Tricep Pushdown (cable)</li>
+            <li>Skull Crusher</li>
+            <li>Overhead Tricep Extension</li>
+            <li>Dips</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#F1EFE8; color:#2C2C2A;">🏔️ Shoulders (Deltoids)</div>
+        <div class="gif-block"><span>🏔️</span>Shoulder Press — works all three heads</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Three heads: front (anterior), side (lateral), and rear (posterior). Lateral raises give the "wide" shoulder look.</p>
+          <ul>
+            <li>Shoulder Press (dumbbell or barbell)</li>
+            <li>Lateral Raise</li>
+            <li>Front Raise</li>
+            <li>Rear Delt Fly</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#EAF3DE; color:#173404;">🎯 Core & Abs</div>
+        <div class="gif-block"><span>🎯</span>Plank — foundation of core training</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Includes the rectus abdominis (six-pack), obliques (sides), and deeper stabilizing muscles.</p>
+          <ul>
+            <li>Plank</li>
+            <li>Dead Bug</li>
+            <li>Hanging Knee Raise</li>
+            <li>Cable Crunch</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="muscle-card">
+        <div class="muscle-card-header" style="background:#E1F5EE; color:#04342C;">🏃 Calves</div>
+        <div class="gif-block"><span>🦶</span>Standing Calf Raise</div>
+        <div class="muscle-card-body">
+          <p style="font-size:0.82rem;color:var(--text-muted);padding:0 0 0.5rem;">Gastrocnemius (outer) and soleus (inner). Often undertrained by beginners.</p>
+          <ul>
+            <li>Standing Calf Raise</li>
+            <li>Seated Calf Raise</li>
+            <li>Single-Leg Calf Raise</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-box">
+      <strong>Note on GIFs:</strong> This guide references exercise demonstrations. For free, high-quality exercise GIFs and instructions, check out <strong>ExerciseLibrary.app</strong>, <strong>LiftLookup.com</strong>, and <strong>GymVisual.com</strong>. These are excellent beginner-friendly resources with thousands of exercises catalogued.
+    </div>
+
+    <h3>Movement Patterns — The Big Picture</h3>
+    <p>Rather than thinking only in terms of muscle groups, experienced trainers think in <strong>movement patterns</strong>. A balanced program covers all of these:</p>
+    <div class="card-grid">
+      <div class="card"><h4>Push</h4><p>Bench press, push-ups, shoulder press, dips</p></div>
+      <div class="card"><h4>Pull</h4><p>Rows, lat pulldowns, pull-ups, face pulls</p></div>
+      <div class="card"><h4>Squat / Knee Dominant</h4><p>Squats, lunges, leg press, step-ups</p></div>
+      <div class="card"><h4>Hinge / Hip Dominant</h4><p>Deadlifts, Romanian deadlifts, hip thrusts, kettlebell swings</p></div>
+      <div class="card"><h4>Carry</h4><p>Farmer's walks, suitcase carries — often forgotten but incredibly functional</p></div>
+      <div class="card"><h4>Core / Anti-Rotation</h4><p>Planks, dead bugs, pallof press</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HEALTH ============ -->
+<section id="health">
+  <div class="content-section">
+    <h2>Health & Recovery</h2>
+    <p>The gym is where you challenge your body. Everything outside the gym — sleep, stress, nutrition, movement — is where you actually improve. Neglecting recovery is the most common reason beginners plateau or get injured.</p>
+
+    <h3>Sleep: The Most Underrated Tool</h3>
+    <p>During deep sleep, your body releases <strong>Human Growth Hormone (HGH)</strong>, which is critical for tissue repair and muscle synthesis. Without adequate sleep, training becomes counterproductive. Chronic sleep deprivation also raises <strong>cortisol</strong> (your primary stress hormone), which promotes fat storage and breaks down muscle tissue.</p>
+    <ul>
+      <li>Aim for <strong>7–9 hours</strong> of quality sleep per night</li>
+      <li>Consistent sleep and wake times are more important than total hours alone</li>
+      <li>Avoid screens 30–60 minutes before bed to improve sleep quality</li>
+      <li>A cool, dark room significantly improves sleep depth</li>
+    </ul>
+
+    <h3>Stretching & Flexibility</h3>
+    <p>Stretching is often skipped because it feels unproductive — but it's a key part of longevity and injury prevention.</p>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Dynamic Stretching (Pre-Workout)</h4>
+        <p>Controlled movements that warm up the joints and muscles. Leg swings, arm circles, hip rotations. Do this <em>before</em> lifting — not static holds.</p>
+      </div>
+      <div class="card">
+        <h4>Static Stretching (Post-Workout)</h4>
+        <p>Holding a stretch for 20–30 seconds. Best done after exercise when muscles are warm. Helps with flexibility and recovery.</p>
+      </div>
+      <div class="card">
+        <h4>Foam Rolling</h4>
+        <p>Self-myofascial release — rolling over muscle tissue to reduce tension. Particularly helpful for the quads, IT band, and upper back.</p>
+      </div>
+    </div>
+
+    <h3>Rest Days</h3>
+    <p>Rest days are not lazy days — they are essential days. Muscles don't grow in the gym; they grow during rest. As a beginner, aim for <strong>at least 1–2 full rest days per week.</strong></p>
+    <p><strong>Active recovery</strong> (light walking, yoga, easy cycling) on rest days can actually improve recovery more than complete inactivity by increasing blood flow to sore muscles.</p>
+
+    <h3>Understanding Delayed Onset Muscle Soreness (DOMS)</h3>
+    <p>Soreness 24–48 hours after a workout is normal and expected, especially early on. It's caused by microscopic damage to muscle fibers during exercise — the repair of which makes the muscle stronger and larger. <strong>Soreness is not required for progress</strong>, however. If you stop getting sore over time, that doesn't mean the workout isn't working.</p>
+
+    <h3>Body Types</h3>
+    <p>Genetics play a real role in how your body responds to exercise and how it stores fat. While body type is not destiny, understanding yours can help you set realistic expectations.</p>
+
+    <div class="body-type-grid">
+      <div class="body-type-card">
+        <div class="body-fig">🟦</div>
+        <h4>Ectomorph</h4>
+        <p>Naturally lean and slim. Fast metabolism. Tends to find it harder to build muscle or gain weight. Benefits from higher calorie intake and heavier compound training.</p>
+      </div>
+      <div class="body-type-card">
+        <div class="body-fig">🟩</div>
+        <h4>Mesomorph</h4>
+        <p>Naturally muscular and athletic build. Gains muscle and loses fat with relative ease. Responds well to most training styles. Often considered the "lucky" body type.</p>
+      </div>
+      <div class="body-type-card">
+        <div class="body-fig">🔴</div>
+        <h4>Endomorph</h4>
+        <p>Naturally larger frame, tends to store fat more easily. Slower metabolism. Benefits from a mix of strength training and cardio, plus careful nutrition. Absolutely capable of excellent results.</p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Important note:</strong> Most people are a blend of these types, not a clean category. These are general tendencies, not limitations. Your body type does not determine your ceiling — only your consistency does.
+    </div>
+
+    <h3>Stress Management</h3>
+    <p>Your body doesn't distinguish between physical stress (lifting) and mental stress (work deadlines). Both elevate cortisol. If you're under chronic life stress, your recovery from training will be slower and your results will suffer. Managing mental health is part of your fitness program.</p>
+    <ul>
+      <li>Regular walks outside are surprisingly effective for stress reduction</li>
+      <li>Overtraining (too much exercise without recovery) compounds stress — more is not always better</li>
+      <li>Sleep is the single best stress-management tool available</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ HYGIENE ============ -->
+<section id="hygiene">
+  <div class="content-section">
+    <h2>Hygiene</h2>
+    <p>Good gym hygiene is about mutual respect — for the equipment, the staff, and everyone sharing that space with you. It's also about taking care of your own body properly after training.</p>
+
+    <h3>Gym Etiquette (The Unwritten Rules)</h3>
+    <ul class="checklist">
+      <li><strong>Wipe down equipment</strong> after every use with the provided wipes or spray. Sweat on a bench or machine seat is one of the most common gym complaints.</li>
+      <li><strong>Re-rack your weights.</strong> Always put dumbbells back on the rack in the correct order. Strip plates from barbells after use.</li>
+      <li><strong>Use deodorant.</strong> Body odour in an enclosed space affects everyone around you.</li>
+      <li><strong>Don't hover</strong> over someone clearly mid-set waiting for their machine.</li>
+      <li><strong>Limit phone use</strong> on equipment. If you need to check your phone, step aside — don't sit on a machine scrolling between sets during busy hours.</li>
+      <li><strong>Avoid strong fragrances.</strong> Heavy cologne or perfume can be as unpleasant as body odour in a gym environment.</li>
+      <li><strong>Don't hog multiple pieces of equipment</strong> during busy periods to "superset."</li>
+    </ul>
+
+    <h3>Washing Your Gym Clothes</h3>
+    <p>Gym clothes — especially synthetic, moisture-wicking fabrics — need to be washed properly to remove bacteria and eliminate odour buildup:</p>
+    <ul>
+      <li><strong>Wash after every use.</strong> Never leave damp gym clothes in a bag overnight — bacteria multiplies rapidly in warm, moist environments.</li>
+      <li>Turn clothes inside-out before washing — most of the sweat is on the inner surface.</li>
+      <li>Wash in cold water; hot water damages elastic fibres and can "set" odours into synthetic fabrics.</li>
+      <li>Avoid fabric softener on technical fabrics — it coats the fibres and reduces moisture-wicking ability.</li>
+      <li>Air dry when possible rather than tumble-drying — heat degrades lycra and spandex.</li>
+      <li>If clothes smell even after washing, soak in a 1:4 solution of white vinegar and water for 30 minutes before washing.</li>
+    </ul>
+
+    <h3>Caring for Your Gym Shoes</h3>
+    <ul>
+      <li>Remove insoles after wearing and let them air out separately — this is where most of the odour develops.</li>
+      <li>Don't leave gym shoes in a sealed bag or locker after use — allow air circulation.</li>
+      <li>Sprinkle baking soda inside shoes between uses to absorb moisture and odour.</li>
+      <li>Most gym shoes can be spot-cleaned or gently hand-washed. Check the label before machine washing.</li>
+    </ul>
+
+    <h3>After Your Workout</h3>
+    <p>Don't stay in your sweaty clothes longer than necessary. Sitting in damp, sweat-soaked clothing for hours increases the risk of skin irritation, bacterial infections, and fungal issues (such as jock itch or athlete's foot). Change and shower as soon as practical after training.</p>
+
+    <h3>Wearing Makeup to the Gym</h3>
+    <p>This is a genuinely common question. The honest answer is: wearing makeup during exercise isn't dangerous, but it does come with some considerations:</p>
+    <ul>
+      <li><strong>Sweat + foundation/heavy makeup</strong> can trap heat and contribute to clogged pores, breakouts, and skin irritation — particularly if you're prone to acne.</li>
+      <li>Light, breathable products (mineral-based or specifically labelled "non-comedogenic") are much less likely to cause issues.</li>
+      <li>If possible, cleansing your face before exercise reduces the chance of sweat mixing with residue and clogging pores.</li>
+      <li>Always cleanse and moisturise promptly after your workout regardless of whether you wore makeup.</li>
+      <li>SPF products are fine to wear and should be worn if training outdoors.</li>
+    </ul>
+
+    <div class="info-box">
+      <strong>Bottom line:</strong> Wear what makes you feel comfortable and confident. Just cleanse well after and pay attention to your skin's reaction. If you notice breakouts worsening around exercise, a light cleanse before training may help.
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIET ============ -->
+<section id="diet">
+  <div class="content-section">
+    <h2>Diet & Eating Tips</h2>
+    <p>Nutrition is where most of your visible results come from. You can outwork a bad diet in theory, but it's extremely difficult in practice. The good news: you don't need to overhaul everything overnight.</p>
+
+    <h3>What a Calorie Deficit Actually Means</h3>
+    <p>A <strong>calorie deficit</strong> means consuming fewer calories than your body burns in a day. When this happens, your body draws on stored energy (primarily body fat) to make up the difference. This is how fat loss works — it is the fundamental mechanism, regardless of what diet you follow.</p>
+    <p>The key is that a deficit needs to be <strong>sustainable</strong>. A 300–500 calorie daily deficit is a sensible starting point — aggressive deficits (1000+ calories) lead to muscle loss, fatigue, and the kind of hunger that causes people to abandon their diet entirely.</p>
+
+    <div class="calc-box">
+      <h3>📊 Rough Daily Calorie Estimator</h3>
+      <div class="calc-row">
+        <label>Weight (kg)</label>
+        <input type="number" id="calc-weight" placeholder="e.g. 75" min="30" max="250">
+      </div>
+      <div class="calc-row">
+        <label>Height (cm)</label>
+        <input type="number" id="calc-height" placeholder="e.g. 175" min="100" max="250">
+      </div>
+      <div class="calc-row">
+        <label>Age</label>
+        <input type="number" id="calc-age" placeholder="e.g. 28" min="16" max="100">
+      </div>
+      <div class="calc-row">
+        <label>Biological Sex</label>
+        <select id="calc-sex">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="calc-row">
+        <label>Activity Level</label>
+        <select id="calc-activity">
+          <option value="1.2">Sedentary (desk job, little exercise)</option>
+          <option value="1.375">Lightly active (1–3 days/week)</option>
+          <option value="1.55" selected>Moderately active (3–5 days/week)</option>
+          <option value="1.725">Very active (6–7 days/week)</option>
+        </select>
+      </div>
+      <button class="btn-calc" onclick="calcCalories()">Calculate</button>
+      <div class="calc-result" id="calc-result">
+        <strong id="calc-tdee"></strong>
+        <span id="calc-breakdown"></span>
+      </div>
+      <p style="font-size:0.78rem;color:var(--gray);margin-top:0.5rem;">This uses the Mifflin-St Jeor equation — a widely used estimate. Individual results vary. Always consult a professional for personalized guidance.</p>
+    </div>
+
+    <h3>The Three Macronutrients (Macros)</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon" style="background:#EAF3DE;">🥩</div>
+        <h4>Protein</h4>
+        <p>Repairs and builds muscle tissue. Every serious fitness goal benefits from adequate protein. Aim for roughly <strong>1.6–2.2g per kg of bodyweight</strong> per day. Sources: chicken, fish, eggs, Greek yogurt, legumes, tofu.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:#FAEEDA;">🌾</div>
+        <h4>Carbohydrates (Carbs)</h4>
+        <p>Your body's primary fuel source. Stored in muscles as glycogen. Don't fear them — eliminating carbs leads to fatigue, poor performance, and is usually unsustainable. Focus on <em>quality</em> sources: oats, rice, potatoes, fruit.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:#E1F5EE;">🥑</div>
+        <h4>Fats</h4>
+        <p>Essential for hormone production, joint health, and absorbing fat-soluble vitamins. Don't eliminate fat — prioritise healthy sources: nuts, avocado, olive oil, fatty fish. Limit trans fats and excessive saturated fats.</p>
+      </div>
+    </div>
+
+    <h3>When to Take Protein</h3>
+    <p>The idea of a strict "anabolic window" — that you must consume protein within 30 minutes of training — has been largely overstated by research. The reality is simpler: <strong>total daily protein intake matters far more than precise timing.</strong></p>
+    <p>That said, consuming protein within a couple of hours of training is a sensible habit, and having protein-rich meals spread throughout the day (rather than all at once) does appear to support muscle protein synthesis more effectively than a single large hit.</p>
+
+    <h3>Lowering Sugar Intake</h3>
+    <p>You don't need to eliminate sugar — extreme restriction is unsustainable. Instead, focus on <strong>reducing added sugars</strong> (sodas, sweets, pastries) while keeping naturally-occurring sugars in fruits and dairy, which come packaged with fibre and nutrients.</p>
+    <ul>
+      <li>Swap sugary drinks for water, sparkling water, or unsweetened tea/coffee</li>
+      <li>Read food labels — sugar hides under many names (sucrose, fructose, corn syrup, dextrose)</li>
+      <li>Reducing liquid sugar (drinks) is usually the highest-impact single change most people can make</li>
+    </ul>
+
+    <h3>Staying Hydrated</h3>
+    <p>Even mild dehydration (a 2% drop in body water) can reduce physical performance by up to 10–20%. Dehydrated muscles cramp more easily and recover more slowly.</p>
+    <ul>
+      <li>General guideline: <strong>2–3 litres of water per day</strong>, more on training days or in hot climates</li>
+      <li>Your urine colour is a quick indicator — pale yellow is ideal; dark yellow suggests dehydration</li>
+      <li>Electrolytes (sodium, potassium, magnesium) matter for heavy sweat sessions — a pinch of salt in water or electrolyte tabs help</li>
+    </ul>
+
+    <h3>Don't Overhaul Everything at Once</h3>
+    <p>One of the biggest mistakes beginners make with diet is changing everything simultaneously — cutting calories, eliminating entire food groups, and starting a meal prep routine all in one week. This is a recipe for burnout and abandonment.</p>
+    <blockquote>A sustainable diet you follow 80% of the time beats a perfect diet you follow for 2 weeks.</blockquote>
+    <p>A more realistic progression:</p>
+    <ol>
+      <li><strong>Week 1–2:</strong> Start tracking what you eat (without changing anything) to understand your baseline</li>
+      <li><strong>Week 3–4:</strong> Swap out the most obvious sources of excess sugar or junk</li>
+      <li><strong>Month 2:</strong> Increase protein intake and add more vegetables</li>
+      <li><strong>Month 3+:</strong> Refine calories if weight goals aren't being met</li>
+    </ol>
+
+    <h3>Gut Health</h3>
+    <p>Your gut microbiome influences everything from energy levels to mood to how efficiently you absorb nutrients. A diverse, fibre-rich diet is the most evidence-backed way to support gut health:</p>
+    <ul>
+      <li><strong>Fibre:</strong> Fruits, vegetables, legumes, whole grains — aim for 25–35g per day</li>
+      <li><strong>Fermented foods:</strong> Yogurt (with live cultures), kefir, kimchi, sauerkraut — these introduce beneficial bacteria</li>
+      <li><strong>Limit ultra-processed foods:</strong> These tend to disrupt the gut microbiome over time</li>
+      <li><strong>Prebiotic foods:</strong> Garlic, onions, bananas, oats — these feed beneficial gut bacteria</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SUPPLEMENTS ============ -->
+<section id="supplements">
+  <div class="content-section">
+    <h2>Supplements</h2>
+    <p>The supplement industry is worth billions and markets aggressively to beginners. The truth is straightforward: supplements are <em>supplementary</em> — they sit on top of a solid foundation of food, sleep, and training. Without that foundation, no supplement will produce meaningful results.</p>
+
+    <div class="disclaimer">
+      <strong>Before taking any supplement:</strong> Consult your doctor or a registered dietitian, especially if you have any existing health conditions or take medication. Most supplements are unregulated and not approved by health authorities before sale. Quality and purity vary significantly between brands.
+    </div>
+
+    <h3>What to Look for on the Label</h3>
+    <ul>
+      <li><strong>Third-party testing certifications:</strong> Look for NSF Certified for Sport, Informed Sport, or USP Verified. This means an independent lab has confirmed the product contains what it says and isn't contaminated.</li>
+      <li><strong>Minimal proprietary blends:</strong> These hide the actual doses of individual ingredients behind a total number. Prefer products that list exact amounts.</li>
+      <li><strong>Reasonable serving sizes:</strong> If a product requires 4 scoops to achieve a dose, be sceptical.</li>
+      <li><strong>Artificial additives:</strong> Not necessarily harmful, but some people prefer to minimise dyes, sweeteners, and fillers.</li>
+    </ul>
+
+    <h3>Supplement Overview</h3>
+    <table class="supp-table">
+      <thead>
+        <tr>
+          <th>Supplement</th>
+          <th>What it Does</th>
+          <th>Worth It?</th>
+          <th>When to Take</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Protein Powder</strong></td>
+          <td>A convenient way to hit daily protein targets. Whey is fast-absorbing; casein is slow. Plant-based options available.</td>
+          <td><span class="badge badge-maybe">Optional</span></td>
+          <td>Any time — post-workout is popular but timing is flexible</td>
+        </tr>
+        <tr>
+          <td><strong>Creatine Monohydrate</strong></td>
+          <td>One of the most researched supplements in existence. Helps muscles produce energy during high-intensity efforts. Increases strength and power output slightly.</td>
+          <td><span class="badge badge-yes">Yes, for most</span></td>
+          <td>Daily — at any time, consistency matters more than timing</td>
+        </tr>
+        <tr>
+          <td><strong>Caffeine / Pre-Workout</strong></td>
+          <td>Temporarily boosts focus, energy, and perceived performance. Most pre-workout supplements are primarily caffeine with additional ingredients of variable evidence.</td>
+          <td><span class="badge badge-maybe">Optional</span></td>
+          <td>30–60 minutes before training. Avoid within 6 hours of sleep</td>
+        </tr>
+        <tr>
+          <td><strong>Vitamin D</strong></td>
+          <td>Most people who work indoors or live in less sunny climates are deficient. Supports immune function, mood, and bone health.</td>
+          <td><span class="badge badge-yes">If deficient</span></td>
+          <td>With a meal containing fat (improves absorption)</td>
+        </tr>
+        <tr>
+          <td><strong>Omega-3 (Fish Oil)</strong></td>
+          <td>Supports joint health, reduces inflammation, and benefits cardiovascular health. Useful if you eat little oily fish.</td>
+          <td><span class="badge badge-yes">Worthwhile</span></td>
+          <td>With a meal</td>
+        </tr>
+        <tr>
+          <td><strong>Branched-Chain Amino Acids (BCAAs)</strong></td>
+          <td>Heavily marketed to beginners but largely unnecessary if you're already eating adequate protein. BCAAs are just a subset of amino acids found in any protein source.</td>
+          <td><span class="badge badge-no">Skip it</span></td>
+          <td>Not recommended as a priority purchase</td>
+        </tr>
+        <tr>
+          <td><strong>Multivitamin</strong></td>
+          <td>Can fill nutritional gaps in a poor diet but is not a substitute for varied whole foods. Evidence for benefits in people eating a balanced diet is weak.</td>
+          <td><span class="badge badge-maybe">Situation-dependent</span></td>
+          <td>With breakfast</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Creatine — A Closer Look</h3>
+    <p>Creatine is probably the most misunderstood supplement. Here's what the research actually says:</p>
+    <ul>
+      <li><strong>It works.</strong> Hundreds of peer-reviewed studies confirm modest but real improvements in strength and power output for most people.</li>
+      <li><strong>It causes water retention</strong> — specifically intramuscular water (inside the muscles), not the bloated, subcutaneous kind. This is part of why it works and is not a health concern.</li>
+      <li><strong>It is safe for healthy individuals.</strong> The "creatine is hard on kidneys" myth persists but is not supported by evidence in people with healthy kidney function.</li>
+      <li><strong>Creatine monohydrate is the only form you need.</strong> Fancy variants (Kre-Alkalyn, creatine HCl) cost more and have no proven advantage.</li>
+      <li><strong>Dose:</strong> 3–5g per day. No loading phase is necessary (it just saturates muscles faster).</li>
+      <li><strong>Roughly 20–30% of people are "non-responders"</strong> — they don't notice a benefit because their muscles are already naturally saturated with creatine from diet.</li>
+    </ul>
+
+    <h3>Should You Take Pre-Workout?</h3>
+    <p>Pre-workout supplements are primarily stimulants — the active ingredient in most is caffeine. A cup of coffee 30 minutes before training achieves the same effect for most people at a fraction of the cost, without the crash or dependency that comes from high-dose commercial pre-workouts.</p>
+    <p>If you do use pre-workout, watch for: high caffeine doses (some products exceed 400mg per serving), proprietary blends, and niacin (Vitamin B3) "flush" reactions in some formulations. Cycle off periodically to reset your caffeine tolerance.</p>
+
+    <blockquote>"Supplements are the 5%. Food, sleep, training, and consistency are the 95%."</blockquote>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="content-section">
+    <h2>Common Questions</h2>
+    <p>The questions every beginner Googles at some point — answered honestly.</p>
+
+    <div class="pill-tabs">
+      <div class="pill-tab active" onclick="switchFaqTab('before')">Before You Go</div>
+      <div class="pill-tab" onclick="switchFaqTab('floor')">On the Gym Floor</div>
+      <div class="pill-tab" onclick="switchFaqTab('food')">Food & Fuel</div>
+      <div class="pill-tab" onclick="switchFaqTab('progress')">Progress & Mindset</div>
+    </div>
+
+    <div class="tab-content active" id="faq-before">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What should I wear to the gym for the first time? <span class="chevron">▼</span></div>
+        <div class="faq-a">Anything comfortable, breathable, and that allows a full range of movement. Athletic shorts or leggings, a t-shirt or vest, and appropriate footwear. Don't overthink it. Flat-soled shoes (like Converse) are better for weight training; cushioned running shoes are better for cardio. Nobody is judging your outfit.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">I'm nervous and feel like everyone will watch me — is that normal? <span class="chevron">▼</span></div>
+        <div class="faq-a">Completely normal and extremely common — this feeling is so widespread it has a name: "gymtimidation." The reality is that experienced gym-goers are focused on their own training. Most are not watching you, and those who do notice a new face are generally supportive rather than critical. This anxiety almost always fades after 2–3 visits once you become familiar with the environment.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need a personal trainer to start? <span class="chevron">▼</span></div>
+        <div class="faq-a">Not necessarily, though a few sessions with a trainer to learn proper form on key exercises is genuinely valuable. Many gyms include an initial induction session with your membership — use it. If budget allows, even 3–5 sessions to learn the foundations can prevent months of bad habits. This guide and free resources (YouTube, reputable fitness databases) can also take you a long way.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How many days a week should a beginner go to the gym? <span class="chevron">▼</span></div>
+        <div class="faq-a">3 days per week is the sweet spot for most beginners. It allows sufficient stimulus for progress while leaving adequate time for recovery. Going every day as a beginner is a common mistake that leads to overtraining and burnout. Start with 3, establish consistency, and only increase frequency once you're confident in your routine.</div>
+      </div>
+
+    </div>
+
+    <div class="tab-content" id="faq-floor">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Should I do cardio before or after weights? <span class="chevron">▼</span></div>
+        <div class="faq-a">For most people with general fitness goals, weights first is the better approach. Strength training requires more neuromuscular precision and energy — doing it on fresh legs leads to better performance and reduced injury risk. Cardio can be done after, or on separate days entirely. Exception: a 5–10 minute light cardio warm-up before lifting is beneficial and recommended.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long should a workout be? <span class="chevron">▼</span></div>
+        <div class="faq-a">For beginners, 45–60 minutes is plenty. More isn't always better. Beyond about 60–75 minutes, the quality of effort typically declines and recovery time increases. A focused 45-minute session beats an unfocused 2-hour session. Your warm-up and cool-down are included in this time.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What does "training to failure" mean, and should I do it? <span class="chevron">▼</span></div>
+        <div class="faq-a">Training to failure means performing reps until you physically cannot complete another one with good form. While it can stimulate growth, it's generally not recommended for beginners — it significantly increases recovery time, injury risk, and form breakdown. As a beginner, stop 1–2 reps before failure (this is called leaving Reps in Reserve, or RIR). You'll still make excellent progress and stay much safer.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I know if a weight is too heavy or too light? <span class="chevron">▼</span></div>
+        <div class="faq-a">Too heavy: your form breaks down, you're not completing the target reps, or you feel pain (not to be confused with effort). Too light: you complete all your sets and reps easily with no challenge in the final reps. Aim for a weight where the last 2–3 reps of each set feel challenging but your form remains solid throughout. If you can't maintain form, the weight is too heavy.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Should I work out when I'm sore? <span class="chevron">▼</span></div>
+        <div class="faq-a">Mild soreness — yes. Light exercise and movement actually speeds up recovery from Delayed Onset Muscle Soreness (DOMS) by increasing blood flow. However, avoid directly training a muscle group that is severely sore, and never train through sharp or joint pain. As a beginner, general body soreness after your first few weeks is expected; it eases as your body adapts.</div>
+      </div>
+
+    </div>
+
+    <div class="tab-content" id="faq-food">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How much protein do I actually need? <span class="chevron">▼</span></div>
+        <div class="faq-a">For general health, the official recommendations are quite low. For building or preserving muscle, the research points to 1.6–2.2g of protein per kilogram of bodyweight per day. So for a 70kg person, that's roughly 112–154g daily. If you're newer to exercise, you can start at the lower end. You don't need to be exact — hitting roughly the right range consistently matters more than precision.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is lifting weights going to make me bulky? <span class="chevron">▼</span></div>
+        <div class="faq-a">This is one of the most persistent gym myths, particularly among women. Building significant muscle mass requires years of dedicated training, a calorie surplus, and often specific hormonal conditions (primarily testosterone). Resistance training for most beginners — particularly women — will produce a leaner, more defined appearance rather than bulk. The "bulky" look requires enormous deliberate effort.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I lose belly fat specifically by doing crunches? <span class="chevron">▼</span></div>
+        <div class="faq-a">No — this is called "spot reduction" and it is a myth. You cannot choose where your body burns fat from. Abdominal exercises strengthen your core muscles but don't specifically burn the fat covering them. Total body fat reduction through a calorie deficit is what reduces belly fat. The good news is that strength training (including compound exercises that work the whole body) is very effective for reducing overall body fat.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Should I eat before working out, or is training on an empty stomach better? <span class="chevron">▼</span></div>
+        <div class="faq-a">There is no universal answer. Fasted cardio (training on an empty stomach) is not meaningfully more effective for fat loss than fed training when total calories are equal. What matters more is how you feel and perform. Many people feel nauseous training on a full stomach; others feel weak training fasted. Experiment. A light meal 1–2 hours before training (some protein and carbs) is a sensible default for most people.</div>
+      </div>
+
+    </div>
+
+    <div class="tab-content" id="faq-progress">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">When will I see results? <span class="chevron">▼</span></div>
+        <div class="faq-a">You'll likely feel results (more energy, better sleep, improved mood) within 2–3 weeks. Visible physical changes typically take 6–8 weeks of consistent training and appropriate nutrition to become noticeable to you in the mirror. Others around you may notice changes before you do. Strength gains, which are more measurable, often come quickly in the first few months — this is normal and encouraging, not a fluke.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">My weight has gone up since I started working out. What's happening? <span class="chevron">▼</span></div>
+        <div class="faq-a">Very common and usually temporary. When you start exercise, your muscles retain more water (particularly if you start creatine) and glycogen (stored carbohydrate). This can add 1–3kg on the scale without any fat gain. Additionally, muscle is denser than fat — as you lose fat and gain muscle, your weight may change less than expected even as your body composition improves significantly. The scale is one of many imperfect metrics — consider also tracking how clothes fit, energy levels, and strength progress.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What should I do when my progress stalls? <span class="chevron">▼</span></div>
+        <div class="faq-a">A progress plateau is normal and expected — your body adapts to training over time. First, check the basics: Are you eating enough protein? Sleeping 7–9 hours? Are you actually progressively overloading (adding reps or weight over time)? If those are in order, try varying your training — change the rep range, try different exercises, or deload (take a lighter week). Sometimes a week of reduced intensity is exactly what the body needs to break through a plateau.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if I miss workouts — is my progress ruined? <span class="chevron">▼</span></div>
+        <div class="faq-a">Missing a workout, or even a week, is completely fine and will not derail meaningful progress. Fitness is built over months and years, not individual sessions. The dangerous trap is the "all or nothing" mentality — missing one session and then not going for three weeks because "the streak is broken." Just go next time. Consistency over time is what matters, not perfection.</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+
+function switchFaqTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.pill-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('faq-' + tab).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function calcCalories() {
+  const w = parseFloat(document.getElementById('calc-weight').value);
+  const h = parseFloat(document.getElementById('calc-height').value);
+  const a = parseFloat(document.getElementById('calc-age').value);
+  const sex = document.getElementById('calc-sex').value;
+  const act = parseFloat(document.getElementById('calc-activity').value);
+
+  if (!w || !h || !a) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  let bmr;
+  if (sex === 'male') {
+    bmr = 10 * w + 6.25 * h - 5 * a + 5;
+  } else {
+    bmr = 10 * w + 6.25 * h - 5 * a - 161;
+  }
+
+  const tdee = Math.round(bmr * act);
+  const deficit = tdee - 400;
+  const surplus = tdee + 300;
+
+  const result = document.getElementById('calc-result');
+  document.getElementById('calc-tdee').textContent = tdee + ' calories/day to maintain weight';
+  document.getElementById('calc-breakdown').textContent =
+    'For fat loss: ~' + deficit + ' cal/day | For muscle gain: ~' + surplus + ' cal/day';
+  result.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
